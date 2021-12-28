@@ -1,0 +1,25 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var screen = document.querySelector('canvas');
+    var brushPaint = screen.getContext('2d');
+
+    brushPaint.fillStyle = 'grey';
+    brushPaint.fillRect(0, 0, 600, 400);
+
+    function drawCircle(event) {
+
+        var x = event.pageX - screen.offsetLeft;
+        var y = event.pageY - screen.offsetTop;
+        brushPaint.fillStyle = 'darkviolet';
+        brushPaint.beginPath();
+        brushPaint.arc(x, y, 10, 0, 2 * 3.14);
+        brushPaint.fill();
+        console.log(x + ',' + y);
+
+    }
+
+    screen.onclick = drawCircle;
+
+</script>

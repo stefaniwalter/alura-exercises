@@ -1,0 +1,36 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var screen = document.querySelector('canvas');
+    var brushPaint = screen.getContext('2d');
+    brushPaint.fillStyle = 'lightgrey';
+    brushPaint.fillRect(0, 0, 600, 400);
+
+    function drawCircle (x, y, radium){
+
+        brushPaint.fillStyle = 'royalblue';
+        brushPaint.beginPath();
+        brushPaint.arc(x, y, radium, 0, 2 * Math.PI);
+        brushPaint.fill();
+
+    }
+
+    function clearScreen () {
+
+        brushPaint.clearRect(0, 0, 600, 400);
+
+    }
+
+    var x = 20;
+
+    function screenFresh () {
+
+        clearScreen();
+        drawCircle(x, 20, 10);
+        x++;
+    }
+
+    setInterval(screenFresh, 20);
+
+</script>

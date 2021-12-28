@@ -1,0 +1,30 @@
+ <meta charset= "UTF-8">
+
+<script>
+
+    function jumpLine() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+    }
+
+    function show(phrase) {
+
+        document.write(phrase);
+        jumpLine();
+
+    }
+
+    var limit = parseInt(prompt("Entre com a data limite"));
+
+    var cupYear = 1930;
+
+    while(cupYear<=limit){
+
+        show("Teve copa em " + cupYear);
+         cupYear = cupYear + 4;
+    }
+    show("FIM");
+
+</script>

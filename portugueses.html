@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+
+    <script>
+        function jumpLine() {
+            document.write("<br>");
+        }
+
+        function show(text) {
+            document.write(text);
+            jumpLine();
+        }
+
+        var age = 28;
+        var currentYear = 2021; 
+
+        var generation = (currentYear - 1500) / age;
+
+        show(generation);
+    </script>

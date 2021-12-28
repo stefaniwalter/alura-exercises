@@ -1,0 +1,45 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var screen = document.querySelector('canvas');
+    var brushPaint = screen.getContext('2d');
+    brushPaint.fillStyle = 'lightgray';
+    brushPaint.fillRect(0, 0, 600, 400);
+
+    function drawCircle(x, y, radium, color) {
+
+        brushPaint.fillStyle = color;
+        brushPaint.beginPath();
+        brushPaint.arc(x, y, radium, 0, 2 * Math.PI);
+        brushPaint.fill();
+    }
+
+    function clearScreen() {
+
+        brushPaint.clearRect(0, 0, 600, 400);
+    }
+
+    var radium = 19;
+
+    var growthFactor = 0;
+
+    function screenRefresh() {
+
+        clearScreen();
+
+        if(radium > 30) {
+            growthFactor = -1;
+        } else if (radium < 20) {
+            growthFactor = 1;
+        }
+
+        radium = radium + growthFactor;
+
+        drawCircle(300, 200, radium, 'darkviolet');
+
+    }
+
+    setInterval(screenRefresh, 20);
+
+</script>

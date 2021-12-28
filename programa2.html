@@ -1,0 +1,26 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    function drawSquare(x, y, color) {
+
+    var screen = document.querySelector('canvas');
+    var brushPaint = screen.getContext('2d');
+
+    brushPaint.fillStyle = color;
+    brushPaint.fillRect(x, y, 50, 50);
+    brushPaint.fillStroke = 'black';
+    brushPaint.strokeRect(x, y, 50, 50);
+
+    }
+    
+    var x = 0;
+    while(x < 600) {
+
+        drawSquare(x, 0, 'green');
+        x = x+ 50;
+
+    } 
+    
+
+</script>
